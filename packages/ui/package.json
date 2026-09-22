@@ -1,0 +1,36 @@
+{
+  "name": "@nas-ui/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "style": "./dist/index.css",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vue-tsc -b && vite build",
+    "typecheck": "vue-tsc -b"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "reka-ui": "^2.10.5",
+    "tailwind-variants": "^3.3.1",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "unplugin-dts": "^1.1.1",
+    "vite": "catalog:",
+    "vite-plugin-static-copy": "^4.1.1",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  }
+}

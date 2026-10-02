@@ -37,6 +37,7 @@ export default defineConfig([
     rules: {
       "vue/multi-word-component-names": "off",
       "vue/no-reserved-component-names": "off",
+      "vue/require-default-prop": "off",
     },
   },
 

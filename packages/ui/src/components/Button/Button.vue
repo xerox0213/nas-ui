@@ -69,7 +69,6 @@ const props = withDefaults(defineProps<Props>(), {
   variant: "primary",
   size: "md",
   disabled: undefined,
-  class: undefined,
 });
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 const button = tv({
-  base: "rounded-base flex items-center border transition-colors",
+  base: "rounded-base inline-flex items-center border transition-colors",
   variants: {
     variant: {
       primary: [
@@ -67,6 +67,7 @@ const props = withDefaults(defineProps<Props>(), {
   as: "button",
   variant: "primary",
   size: "md",
+  disabled: undefined,
   class: undefined,
 });
 </script>

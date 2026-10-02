@@ -63,6 +63,16 @@ import { type Component } from "vue";
 
 import { tv, type VariantProps } from "#/utils/tv.ts";
 
+/**
+ * Buttons trigger an action in the current view, such as submitting a form,
+ * opening a dialog or deleting an item.
+ * For navigation, use `asChild` with an `<a>` for external links
+ * or a `<RouterLink>` for internal routes.
+ *
+ * @summary triggers an action in the current view
+ */
+defineOptions({ name: "NsButton" });
+
 const props = withDefaults(defineProps<Props>(), {
   as: "button",
   variant: "primary",

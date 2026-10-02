@@ -9,7 +9,15 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
-    dts({ tsconfigPath: "./tsconfig.lib.json" }),
+    dts({
+      tsconfigPath: "./tsconfig.lib.json",
+      exclude: [
+        "src/**/*.stories.ts",
+        "src/docs/**",
+        ".storybook/**",
+        "node_modules/**",
+      ],
+    }),
     viteStaticCopy({
       targets: [
         {

@@ -31,22 +31,13 @@ const button = tv({
 type Variants = VariantProps<typeof button>;
 
 export type Props = {
-  /**
-   * Element or component to render as.
-   * @default "button"
-   */
+  /** Element or component to render as. */
   as?: Component | AsTag;
   /** Render the child element instead, merging props and behavior onto it. */
   asChild?: boolean;
-  /**
-   * Visual style.
-   * @default "primary"
-   */
+  /** Visual style. */
   variant?: Variants["variant"];
-  /**
-   * Button size.
-   * @default "md"
-   */
+  /** Button size. */
   size?: Variants["size"];
   /** Disables the button. */
   disabled?: boolean;
@@ -55,13 +46,6 @@ export type Props = {
   /** Extra classes, merged over the variant classes. */
   class?: string;
 };
-</script>
-
-<script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import { type Component } from "vue";
-
-import { tv, type VariantProps } from "#/utils/tv.ts";
 
 /**
  * Buttons trigger an action in the current view, such as submitting a form,
@@ -71,7 +55,14 @@ import { tv, type VariantProps } from "#/utils/tv.ts";
  *
  * @summary triggers an action in the current view
  */
-defineOptions({ name: "NsButton" });
+export default { name: "NsButton" };
+</script>
+
+<script setup lang="ts">
+import { type AsTag, Primitive } from "reka-ui";
+import { type Component } from "vue";
+
+import { tv, type VariantProps } from "#/utils/tv.ts";
 
 const props = withDefaults(defineProps<Props>(), {
   as: "button",

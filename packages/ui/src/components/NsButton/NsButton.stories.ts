@@ -15,13 +15,6 @@ const renderWith = (content: string) => (args: Props) => ({
 const meta = preview.meta({
   title: "Components/Button",
   component: NsButton,
-  argTypes: {
-    variant: {
-      control: "select",
-      options: ["primary", "secondary", "ghost", "danger"],
-    },
-    size: { control: "select", options: ["sm", "md", "lg"] },
-  },
 });
 
 /**

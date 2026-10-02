@@ -1,1 +1,1 @@
-export * from "./components/NsButton";
+export * from "./components/Button";

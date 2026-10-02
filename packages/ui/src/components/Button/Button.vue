@@ -55,7 +55,7 @@ export type Props = {
  *
  * @summary triggers an action in the current view
  */
-export default { name: "NsButton" };
+export default { name: "Button" };
 </script>
 
 <script setup lang="ts">

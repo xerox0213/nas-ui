@@ -2,19 +2,19 @@ import { ArrowRight, ArrowUpRight, Plus, Trash2 } from "@lucide/vue";
 
 import preview from "#storybook/preview.ts";
 
-import NsButton, { type Props } from "./NsButton.vue";
+import Button, { type Props } from "./Button.vue";
 
 const renderWith = (content: string) => (args: Props) => ({
-  components: { NsButton, ArrowRight, ArrowUpRight, Plus, Trash2 },
+  components: { Button, ArrowRight, ArrowUpRight, Plus, Trash2 },
   setup() {
     return { args };
   },
-  template: `<NsButton v-bind="args">${content}</NsButton>`,
+  template: `<Button v-bind="args">${content}</Button>`,
 });
 
 const meta = preview.meta({
   title: "Components/Button",
-  component: NsButton,
+  component: Button,
 });
 
 /**

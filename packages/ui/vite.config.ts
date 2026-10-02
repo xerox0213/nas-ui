@@ -27,7 +27,13 @@ export default defineConfig({
       formats: ["es"],
     },
     rolldownOptions: {
-      external: ["vue", "reka-ui", "tailwind-variants", "@lucide/vue"],
+      external: [
+        "vue",
+        "reka-ui",
+        "tailwind-variants",
+        "@lucide/vue",
+        "vue-router",
+      ],
     },
   },
 });

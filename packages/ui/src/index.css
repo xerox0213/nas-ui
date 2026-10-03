@@ -216,6 +216,10 @@
     color-scheme: dark;
   }
 
+  * {
+    @apply outline-focus;
+  }
+
   *:focus-visible {
     @apply focus-ring;
   }

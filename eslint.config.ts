@@ -33,6 +33,15 @@ export default defineConfig([
   },
 
   {
+    files: ["packages/ui/**/*.vue"],
+    rules: {
+      "vue/multi-word-component-names": "off",
+      "vue/no-reserved-component-names": "off",
+      "vue/require-default-prop": "off",
+    },
+  },
+
+  {
     plugins: {
       "simple-import-sort": simpleImportSort,
     },

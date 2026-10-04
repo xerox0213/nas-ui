@@ -7,8 +7,6 @@ export default defineMain({
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
   ],
-  // Needed for vue-component-meta to read the component's JSDoc description.
-  features: { experimentalDocgenServer: true },
   framework: {
     name: "@storybook/vue3-vite",
     options: {

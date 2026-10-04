@@ -22,6 +22,7 @@ export const tabs = tv({
       horizontal: {
         base: "flex-col",
         list: "flex-row border-b",
+        trigger: "rounded-t-surface",
         content: "rounded-b-surface border-x border-b",
         indicator: [
           "border-t-primary rounded-t-surface border-x border-t-2",
@@ -30,7 +31,7 @@ export const tabs = tv({
       },
       vertical: {
         base: "flex-row",
-        trigger: "min-w-40",
+        trigger: "rounded-l-surface min-w-40",
         list: "flex-col border-r",
         content: "rounded-r-surface grow border-y border-r",
         indicator: [

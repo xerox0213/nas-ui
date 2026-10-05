@@ -3,7 +3,7 @@ import { tv, type VariantProps } from "../../utils/tv";
 export const tabs = tv({
   slots: {
     base: "flex",
-    list: "border-line relative flex [counter-reset:tabs]",
+    list: "border-line relative isolate flex [counter-reset:tabs]",
     trigger: [
       "text-fg-subtle hover:text-fg group text-label relative z-2 inline-flex items-center gap-2 px-4 py-1.5 transition-colors [counter-increment:tabs]",
       "data-[state=active]:text-fg",

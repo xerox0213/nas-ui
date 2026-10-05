@@ -196,6 +196,39 @@
   /* ---------- Components ---------- */
   --color-kbd: light-dark(var(--color-black-10), var(--color-black-30));
   --color-thumb: var(--color-white);
+
+  /* ---------- Animations ---------- */
+  --animate-fade-in: fade-in 150ms ease-out;
+  --animate-fade-out: fade-out 150ms ease-in;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  --animate-pop-in: pop-in 150ms ease-out;
+  --animate-pop-out: pop-out 150ms ease-in;
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      scale: 0.96;
+    }
+  }
+
+  @keyframes pop-out {
+    to {
+      opacity: 0;
+      scale: 0.98;
+    }
+  }
 }
 
 @utility focus-ring {

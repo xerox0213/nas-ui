@@ -1,6 +1,6 @@
 <script lang="ts">
 const button = tv({
-  base: "rounded-base inline-flex items-center border transition-colors",
+  base: "rounded-base inline-flex items-center justify-center border transition-colors",
   variants: {
     variant: {
       primary: [

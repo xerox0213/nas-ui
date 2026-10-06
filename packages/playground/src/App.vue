@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import {
+  AccordionChevron,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionRoot,
+  AccordionTrigger,
   TabsContent,
   TabsIndicator,
   TabsList,
@@ -26,5 +32,45 @@ import {
       <TabsContent value="password"> Change your password </TabsContent>
       <TabsContent value="billing"> Billing details </TabsContent>
     </TabsRoot>
+
+    <AccordionRoot class="max-w-lg" collapsible>
+      <AccordionItem value="shipping">
+        <AccordionHeader>
+          <AccordionTrigger class="w-full">
+            Shipping
+            <AccordionChevron />
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionContent>
+          Orders ship within 2 business days. Tracking is emailed as soon as the
+          parcel leaves our warehouse.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="returns">
+        <AccordionHeader>
+          <AccordionTrigger class="w-full">
+            Returns
+            <AccordionChevron />
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionContent>
+          You have 30 days to return an item. The refund is issued to the
+          original payment method.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="warranty" disabled>
+        <AccordionHeader>
+          <AccordionTrigger class="w-full">
+            Warranty
+            <AccordionChevron />
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionContent>
+          All products are covered for two years.
+        </AccordionContent>
+      </AccordionItem>
+    </AccordionRoot>
   </main>
 </template>

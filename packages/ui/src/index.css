@@ -229,6 +229,29 @@
       scale: 0.98;
     }
   }
+
+  --animate-accordion-down: accordion-down 150ms ease-out;
+  --animate-accordion-up: accordion-up 120ms ease-in;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+      padding-block: 0;
+    }
+    to {
+      height: var(--reka-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--reka-accordion-content-height);
+    }
+    to {
+      height: 0;
+      padding-block: 0;
+    }
+  }
 }
 
 @utility focus-ring {

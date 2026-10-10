@@ -8,7 +8,7 @@ const button = tv({
         "disabled:bg-disabled disabled:border-line-disabled disabled:text-fg-disabled",
       ],
       secondary: [
-        "bg-control hover:bg-hover border-line-control hover:border-line-control-hover",
+        "bg-control hover:bg-hover border-line-control hover:border-line-control-hover text-fg",
         "disabled:bg-disabled disabled:border-line-disabled disabled:text-fg-disabled",
       ],
       ghost: [

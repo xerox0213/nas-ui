@@ -6,6 +6,13 @@ import {
   AccordionItem,
   AccordionRoot,
   AccordionTrigger,
+  AlertActions,
+  AlertClose,
+  AlertDescription,
+  AlertIcon,
+  AlertRoot,
+  AlertTitle,
+  Button,
   TabsContent,
   TabsIndicator,
   TabsList,
@@ -72,5 +79,16 @@ import {
         </AccordionContent>
       </AccordionItem>
     </AccordionRoot>
+
+    <AlertRoot>
+      <AlertIcon />
+      <AlertTitle>Article publié</AlertTitle>
+      <AlertDescription>Brouillon non enregistré</AlertDescription>
+      <AlertActions>
+        <Button>Action primaire</Button>
+        <Button variant="secondary">Action secondaire</Button>
+      </AlertActions>
+      <AlertClose />
+    </AlertRoot>
   </main>
 </template>

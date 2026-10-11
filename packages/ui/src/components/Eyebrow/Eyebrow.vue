@@ -4,6 +4,7 @@ import { Primitive, type PrimitiveProps } from "reka-ui";
 import { eyebrow } from "./eyebrow.theme";
 
 export type Props = PrimitiveProps & {
+  /** Extra classes, merged over the eyebrow classes. */
   class?: string;
 };
 

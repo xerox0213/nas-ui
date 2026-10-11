@@ -13,6 +13,14 @@ import {
   AlertRoot,
   AlertTitle,
   Button,
+  CardBody,
+  CardDescription,
+  CardHeader,
+  CardIntro,
+  CardLink,
+  CardRoot,
+  CardTitle,
+  Eyebrow,
   TabsContent,
   TabsIndicator,
   TabsList,
@@ -90,5 +98,28 @@ import {
       </AlertActions>
       <AlertClose />
     </AlertRoot>
+
+    <CardRoot>
+      <CardHeader>
+        <Eyebrow>Accessibilité</Eyebrow>
+      </CardHeader>
+      <CardBody>
+        <CardIntro>
+          <CardTitle>
+            <CardLink as-child>
+              <a
+                href="https://ui.shadcn.com/docs/components/base/card#image"
+                target="_blank"
+              >
+                Carte accessible
+              </a>
+            </CardLink>
+          </CardTitle>
+          <CardDescription>
+            La racine de la carte ne doit pas être un lien car ...
+          </CardDescription>
+        </CardIntro>
+      </CardBody>
+    </CardRoot>
   </main>
 </template>

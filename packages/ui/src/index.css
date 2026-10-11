@@ -272,7 +272,9 @@
     color-scheme: dark;
   }
 
-  * {
+  *,
+  ::before,
+  ::after {
     @apply outline-focus;
   }
 

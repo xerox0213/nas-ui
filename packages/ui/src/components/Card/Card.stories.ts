@@ -5,7 +5,6 @@ import preview from "#storybook/preview.ts";
 
 import Button from "../Button/Button.vue";
 import Eyebrow from "../Eyebrow/Eyebrow.vue";
-import Icon from "../Icon/Icon.vue";
 import CardBody from "./CardBody.vue";
 import CardDescription from "./CardDescription.vue";
 import CardFooter from "./CardFooter.vue";
@@ -28,7 +27,6 @@ const cardComponents = {
   CardRaised,
   Eyebrow,
   Button,
-  Icon,
 };
 
 const meta = preview.meta({
@@ -124,15 +122,15 @@ export const InternalLink = meta.story({
  */
 export const ExternalLink = meta.story({
   render: (args: Props) => ({
-    components: cardComponents,
+    components: { ...cardComponents, ArrowUpRight },
     setup() {
-      return { args, ArrowUpRight };
+      return { args };
     },
     template: `
       <CardRoot v-bind="args" class="max-w-md">
         <CardHeader>
           <Eyebrow>Resource</Eyebrow>
-          <Icon :as="ArrowUpRight" size="sm" class="text-fg-subtle" />
+          <ArrowUpRight class="text-fg-subtle" />
         </CardHeader>
         <CardBody>
           <CardIntro>

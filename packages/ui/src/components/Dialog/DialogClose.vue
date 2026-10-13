@@ -3,7 +3,6 @@ import { X } from "@lucide/vue";
 import { DialogClose, type DialogCloseProps } from "reka-ui";
 
 import Button from "../Button/Button.vue";
-import Icon from "../Icon/Icon.vue";
 
 defineOptions({
   inheritAttrs: false,
@@ -36,7 +35,7 @@ const props = defineProps<Props>();
       :class="props.class"
       v-bind="$attrs"
     >
-      <Icon :as="X" />
+      <X />
       <span class="sr-only">Close</span>
     </Button>
   </DialogClose>

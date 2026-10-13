@@ -3,7 +3,6 @@ import { ref } from "vue";
 
 import preview from "#storybook/preview.ts";
 
-import { Icon } from "../Icon";
 import TabsContent from "./TabsContent.vue";
 import TabsIndicator from "./TabsIndicator.vue";
 import TabsList from "./TabsList.vue";
@@ -124,18 +123,20 @@ export const WithIcon = meta.story({
       TabsTrigger,
       TabsIndicator,
       TabsContent,
-      Icon,
+      User,
+      KeyRound,
+      CreditCard,
     },
     setup() {
-      return { args, CreditCard, KeyRound, User };
+      return { args };
     },
     template: `
       <TabsRoot v-bind="args">
         <TabsList>
           <TabsIndicator />
-          <TabsTrigger value="account"><Icon :as="User" />Account</TabsTrigger>
-          <TabsTrigger value="password"><Icon :as="KeyRound" />Password</TabsTrigger>
-          <TabsTrigger value="billing"><Icon :as="CreditCard" />Billing</TabsTrigger>
+          <TabsTrigger value="account"><User />Account</TabsTrigger>
+          <TabsTrigger value="password"><KeyRound />Password</TabsTrigger>
+          <TabsTrigger value="billing"><CreditCard />Billing</TabsTrigger>
         </TabsList>
         <TabsContent value="account">Manage your account settings.</TabsContent>
         <TabsContent value="password">Change your password.</TabsContent>

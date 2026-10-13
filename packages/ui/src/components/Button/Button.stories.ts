@@ -4,14 +4,6 @@ import preview from "#storybook/preview.ts";
 
 import Button, { type Props } from "./Button.vue";
 
-const renderWith = (content: string) => (args: Props) => ({
-  components: { Button, ArrowRight, ArrowUpRight, Plus, Trash2 },
-  setup() {
-    return { args };
-  },
-  template: `<Button v-bind="args">${content}</Button>`,
-});
-
 const meta = preview.meta({
   title: "Components/Button",
   component: Button,
@@ -23,7 +15,13 @@ const meta = preview.meta({
  */
 export const Primary = meta.story({
   args: { variant: "primary" },
-  render: renderWith("Save"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Save</Button>`,
+  }),
 });
 
 /**
@@ -32,7 +30,13 @@ export const Primary = meta.story({
  */
 export const Secondary = meta.story({
   args: { variant: "secondary" },
-  render: renderWith("Cancel"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Cancel</Button>`,
+  }),
 });
 
 /**
@@ -41,7 +45,13 @@ export const Secondary = meta.story({
  */
 export const Ghost = meta.story({
   args: { variant: "ghost" },
-  render: renderWith("Edit"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Edit</Button>`,
+  }),
 });
 
 /**
@@ -50,7 +60,13 @@ export const Ghost = meta.story({
  */
 export const Danger = meta.story({
   args: { variant: "danger" },
-  render: renderWith("Delete"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Delete</Button>`,
+  }),
 });
 
 /**
@@ -59,7 +75,13 @@ export const Danger = meta.story({
  */
 export const Disabled = meta.story({
   args: { disabled: true },
-  render: renderWith("Save"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Save</Button>`,
+  }),
 });
 
 /**
@@ -68,7 +90,13 @@ export const Disabled = meta.story({
  */
 export const Small = meta.story({
   args: { size: "sm" },
-  render: renderWith("Save"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Save</Button>`,
+  }),
 });
 
 /**
@@ -77,7 +105,13 @@ export const Small = meta.story({
  */
 export const Large = meta.story({
   args: { size: "lg" },
-  render: renderWith("Save"),
+  render: (args: Props) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args">Save</Button>`,
+  }),
 });
 
 /**
@@ -86,7 +120,13 @@ export const Large = meta.story({
  */
 export const WithIcon = meta.story({
   args: { variant: "secondary" },
-  render: renderWith(`<Plus class="size-4" />New project`),
+  render: (args: Props) => ({
+    components: { Button, Plus },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args"><Plus />New project</Button>`,
+  }),
 });
 
 /**
@@ -95,7 +135,13 @@ export const WithIcon = meta.story({
  */
 export const OnlyIcon = meta.story({
   args: { variant: "ghost", onlyIcon: true, "aria-label": "Delete" },
-  render: renderWith(`<Trash2 class="size-4" />`),
+  render: (args: Props) => ({
+    components: { Button, Trash2 },
+    setup() {
+      return { args };
+    },
+    template: `<Button v-bind="args"><Trash2 /></Button>`,
+  }),
 });
 
 /**
@@ -104,9 +150,17 @@ export const OnlyIcon = meta.story({
  */
 export const ExternalLink = meta.story({
   args: { asChild: true, variant: "secondary" },
-  render: renderWith(
-    `<a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">Vue docs<ArrowUpRight class="size-4" /></a>`,
-  ),
+  render: (args: Props) => ({
+    components: { Button, ArrowUpRight },
+    setup() {
+      return { args };
+    },
+    template: `
+      <Button v-bind="args">
+        <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">Vue docs<ArrowUpRight /></a>
+      </Button>
+    `,
+  }),
 });
 
 /**
@@ -115,7 +169,15 @@ export const ExternalLink = meta.story({
  */
 export const InternalLink = meta.story({
   args: { asChild: true },
-  render: renderWith(
-    `<RouterLink to="/get-started">Get started<ArrowRight class="size-4" /></RouterLink>`,
-  ),
+  render: (args: Props) => ({
+    components: { Button, ArrowRight },
+    setup() {
+      return { args };
+    },
+    template: `
+      <Button v-bind="args">
+        <RouterLink to="/get-started">Get started<ArrowRight /></RouterLink>
+      </Button>
+    `,
+  }),
 });

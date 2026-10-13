@@ -6,5 +6,4 @@ export * from "./components/Button";
 export * from "./components/Card";
 export * from "./components/Dialog";
 export * from "./components/Eyebrow";
-export * from "./components/Icon";
 export * from "./components/Tabs";

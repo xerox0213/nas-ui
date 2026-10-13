@@ -5,7 +5,7 @@ export const tabs = tv({
     base: "flex",
     list: "border-line relative isolate flex [counter-reset:tabs]",
     trigger: [
-      "text-fg-subtle hover:text-fg group text-label relative z-2 inline-flex items-center gap-2 px-4 py-1.5 transition-colors [counter-increment:tabs]",
+      "text-fg-subtle hover:text-fg group text-label relative z-2 inline-flex items-center gap-2 px-4 py-1.5 transition-colors [counter-increment:tabs] [&_svg]:size-4 [&_svg]:shrink-0",
       "data-[state=active]:text-fg",
       "data-disabled:text-fg-disabled data-disabled:bg-transparent",
     ],

@@ -1,6 +1,6 @@
 <script lang="ts">
 const badge = tv({
-  base: "rounded-base inline-flex items-center border",
+  base: "rounded-base inline-flex items-center border [&_svg]:shrink-0",
   variants: {
     variant: {
       success:
@@ -13,9 +13,9 @@ const badge = tv({
         "bg-neutral-subtle border-line-neutral-subtle text-on-neutral-subtle",
     },
     size: {
-      sm: "gap-1.5 px-1.5 py-0.5 text-xs",
-      md: "gap-1.5 px-2 py-1 text-xs",
-      lg: "text-label gap-2 px-2.5 py-1",
+      sm: "gap-1.5 px-1.5 py-0.5 text-xs [&_svg]:size-3.5",
+      md: "gap-1.5 px-2 py-1 text-xs [&_svg]:size-3.5",
+      lg: "text-label gap-2 px-2.5 py-1 [&_svg]:size-4",
     },
   },
 });

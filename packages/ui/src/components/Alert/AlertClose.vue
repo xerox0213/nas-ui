@@ -4,7 +4,6 @@ import { type AsTag, Primitive } from "reka-ui";
 import { type Component, computed, useId, useSlots } from "vue";
 
 import Button from "../Button/Button.vue";
-import Icon from "../Icon/Icon.vue";
 import { injectAlertContext } from "./alert.context.ts";
 
 defineOptions({
@@ -75,6 +74,6 @@ const onClick = () => {
     v-bind="$attrs"
     @click="onClick"
   >
-    <Icon :as="X" size="md" />
+    <X />
   </Button>
 </template>

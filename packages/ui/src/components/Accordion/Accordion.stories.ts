@@ -1,3 +1,4 @@
+import { RotateCcw, ShieldCheck, Truck } from "@lucide/vue";
 import { ref } from "vue";
 
 import preview from "#storybook/preview.ts";
@@ -126,6 +127,57 @@ export const Multiple = meta.story({
           </AccordionHeader>
           <AccordionContent>
             Two-factor authentication and active sessions.
+          </AccordionContent>
+        </AccordionItem>
+      </AccordionRoot>
+    `,
+  }),
+});
+
+/**
+ * For sections that an icon helps recognize.
+ * Place the icon before the label; the trigger handles the spacing and keeps
+ * the chevron on the right.
+ */
+export const WithIcon = meta.story({
+  args: { collapsible: true },
+  render: (args: Props<boolean>) => ({
+    components: { ...accordionComponents, Truck, RotateCcw, ShieldCheck },
+    setup() {
+      return { args };
+    },
+    template: `
+      <AccordionRoot v-bind="args" class="max-w-lg">
+        <AccordionItem value="shipping">
+          <AccordionHeader>
+            <AccordionTrigger class="w-full">
+              <Truck />Shipping<AccordionChevron />
+            </AccordionTrigger>
+          </AccordionHeader>
+          <AccordionContent>
+            Orders ship within 2 business days. Tracking is emailed as soon
+            as the parcel leaves our warehouse.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="returns">
+          <AccordionHeader>
+            <AccordionTrigger class="w-full">
+              <RotateCcw />Returns<AccordionChevron />
+            </AccordionTrigger>
+          </AccordionHeader>
+          <AccordionContent>
+            You have 30 days to return an item. The refund is issued to the
+            original payment method.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="warranty">
+          <AccordionHeader>
+            <AccordionTrigger class="w-full">
+              <ShieldCheck />Warranty<AccordionChevron />
+            </AccordionTrigger>
+          </AccordionHeader>
+          <AccordionContent>
+            All products are covered for two years, parts and labor included.
           </AccordionContent>
         </AccordionItem>
       </AccordionRoot>

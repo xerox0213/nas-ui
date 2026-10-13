@@ -5,7 +5,7 @@ import { tv } from "../../utils/tv";
 export const alert = tv({
   slots: {
     base: "rounded-surface grid grid-cols-[auto_1fr_auto] grid-rows-[auto_auto_auto] px-4 py-3",
-    icon: "col-start-1 col-end-2 row-start-1 row-end-2 mr-3 self-center",
+    icon: "col-start-1 col-end-2 row-start-1 row-end-2 mr-3 size-4 shrink-0 self-center",
     title: "text-label col-start-2 col-end-3 row-start-1 row-end-2 self-center",
     close: "col-start-3 col-end-4 row-start-1 row-end-2 self-center",
     description:

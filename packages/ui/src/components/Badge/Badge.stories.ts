@@ -2,16 +2,7 @@ import { CircleCheck } from "@lucide/vue";
 
 import preview from "#storybook/preview.ts";
 
-import { Icon } from "../Icon";
 import Badge, { type Props } from "./Badge.vue";
-
-const renderWith = (content: string) => (args: Props) => ({
-  components: { Badge, Icon },
-  setup() {
-    return { args, CircleCheck };
-  },
-  template: `<Badge v-bind="args">${content}</Badge>`,
-});
 
 const meta = preview.meta({
   title: "Components/Badge",
@@ -24,7 +15,13 @@ const meta = preview.meta({
  */
 export const Neutral = meta.story({
   args: { variant: "neutral" },
-  render: renderWith("Draft"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Draft</Badge>`,
+  }),
 });
 
 /**
@@ -33,7 +30,13 @@ export const Neutral = meta.story({
  */
 export const Success = meta.story({
   args: { variant: "success" },
-  render: renderWith("Active"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Active</Badge>`,
+  }),
 });
 
 /**
@@ -42,7 +45,13 @@ export const Success = meta.story({
  */
 export const Warning = meta.story({
   args: { variant: "warning" },
-  render: renderWith("Pending"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Pending</Badge>`,
+  }),
 });
 
 /**
@@ -51,7 +60,13 @@ export const Warning = meta.story({
  */
 export const Danger = meta.story({
   args: { variant: "danger" },
-  render: renderWith("Failed"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Failed</Badge>`,
+  }),
 });
 
 /**
@@ -60,7 +75,13 @@ export const Danger = meta.story({
  */
 export const Small = meta.story({
   args: { size: "sm" },
-  render: renderWith("Draft"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Draft</Badge>`,
+  }),
 });
 
 /**
@@ -69,7 +90,13 @@ export const Small = meta.story({
  */
 export const Large = meta.story({
   args: { size: "lg" },
-  render: renderWith("Draft"),
+  render: (args: Props) => ({
+    components: { Badge },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args">Draft</Badge>`,
+  }),
 });
 
 /**
@@ -78,5 +105,11 @@ export const Large = meta.story({
  */
 export const WithIcon = meta.story({
   args: { variant: "success" },
-  render: renderWith(`<Icon :as="CircleCheck" size="sm" />Deployed`),
+  render: (args: Props) => ({
+    components: { Badge, CircleCheck },
+    setup() {
+      return { args };
+    },
+    template: `<Badge v-bind="args"><CircleCheck />Deployed</Badge>`,
+  }),
 });

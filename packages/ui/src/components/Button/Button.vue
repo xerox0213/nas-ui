@@ -1,6 +1,6 @@
 <script lang="ts">
 const button = tv({
-  base: "rounded-base inline-flex items-center justify-center border transition-colors",
+  base: "rounded-base inline-flex items-center justify-center border transition-colors [&_svg]:shrink-0",
   variants: {
     variant: {
       primary: [
@@ -21,9 +21,9 @@ const button = tv({
       ],
     },
     size: {
-      sm: "gap-1.5 px-2.5 py-1.25 text-xs data-only-icon:p-1.25",
-      md: "text-label gap-2 px-3 py-1.25 data-only-icon:p-1.25",
-      lg: "text-label gap-2 px-4 py-1.75 data-only-icon:p-1.75",
+      sm: "gap-1.5 px-2.5 py-1.25 text-xs data-only-icon:p-1.25 [&_svg]:size-3.5",
+      md: "text-label gap-2 px-3 py-1.25 data-only-icon:p-1.25 [&_svg]:size-4",
+      lg: "text-label gap-2 px-4 py-1.75 data-only-icon:p-1.75 [&_svg]:size-4",
     },
   },
 });

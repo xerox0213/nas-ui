@@ -13,7 +13,7 @@ export const dialog = tv({
       "motion-safe:data-[state=open]:animate-pop-in motion-safe:data-[state=closed]:animate-pop-out",
     ],
     header:
-      "border-line flex items-center justify-between border-b py-1.5 ps-4 pe-1.5",
+      "border-line flex items-center justify-between border-b py-1.5 ps-4 pe-1.5 [&_svg]:size-3.5 [&_svg]:shrink-0",
     label: "text-fg-subtle text-meta font-mono uppercase",
     body: "flex min-h-0 flex-col gap-4 overflow-y-auto p-4",
     intro: "flex flex-col gap-1.5",

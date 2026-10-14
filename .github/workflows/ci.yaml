@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone project
+        uses: actions/checkout@v7
+      - name: setup pnpm with runtime
+        uses: pnpm/setup@v3
+        with:
+          runtime: node@lts
+          cache: true
+      - name: format
+        run: pnpm fmt:check
+      - name: lint
+        run: pnpm lint
+      - name: build
+        run: pnpm build

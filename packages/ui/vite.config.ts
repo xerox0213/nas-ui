@@ -9,7 +9,15 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
-    dts({ tsconfigPath: "./tsconfig.lib.json" }),
+    dts({
+      tsconfigPath: "./tsconfig.lib.json",
+      exclude: [
+        "src/**/*.stories.ts",
+        "src/docs/**",
+        ".storybook/**",
+        "node_modules/**",
+      ],
+    }),
     viteStaticCopy({
       targets: [
         {
@@ -27,7 +35,13 @@ export default defineConfig({
       formats: ["es"],
     },
     rolldownOptions: {
-      external: ["vue", "reka-ui", "tailwind-variants"],
+      external: [
+        "vue",
+        "reka-ui",
+        "tailwind-variants",
+        "@lucide/vue",
+        "vue-router",
+      ],
     },
   },
 });

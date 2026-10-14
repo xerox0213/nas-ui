@@ -1,0 +1,12 @@
+export type { Props as AccordionChevronProps } from "./AccordionChevron.vue";
+export { default as AccordionChevron } from "./AccordionChevron.vue";
+export type { Props as AccordionContentProps } from "./AccordionContent.vue";
+export { default as AccordionContent } from "./AccordionContent.vue";
+export type { Props as AccordionHeaderProps } from "./AccordionHeader.vue";
+export { default as AccordionHeader } from "./AccordionHeader.vue";
+export type { Props as AccordionItemProps } from "./AccordionItem.vue";
+export { default as AccordionItem } from "./AccordionItem.vue";
+export type { Props as AccordionRootProps } from "./AccordionRoot.vue";
+export { default as AccordionRoot } from "./AccordionRoot.vue";
+export type { Props as AccordionTriggerProps } from "./AccordionTrigger.vue";
+export { default as AccordionTrigger } from "./AccordionTrigger.vue";

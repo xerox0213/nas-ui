@@ -7,6 +7,7 @@
     "build": "pnpm -F @nas-ui/ui build",
     "typecheck": "pnpm -r --parallel typecheck",
     "fmt": "prettier . --write",
+    "fmt:check": "prettier . --check",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
@@ -37,7 +38,7 @@
       "prettier --write",
       "eslint --fix"
     ],
-    "*.{css,json,md}": [
+    "*.{css,json,md,yaml}": [
       "prettier --write"
     ]
   }

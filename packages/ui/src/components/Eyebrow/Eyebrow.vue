@@ -14,11 +14,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <Primitive
-    :as="as"
-    :as-child="asChild"
-    :class="eyebrow({ class: props.class })"
-  >
+  <Primitive :as="as" :as-child="asChild" :class="eyebrow({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

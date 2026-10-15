@@ -19,12 +19,7 @@ const { ui, titleId } = injectAlertContext();
 </script>
 
 <template>
-  <Primitive
-    :id="titleId"
-    :as="as"
-    :as-child="asChild"
-    :class="ui.title({ class: props.class })"
-  >
+  <Primitive :id="titleId" :as="as" :as-child="asChild" :class="ui.title({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

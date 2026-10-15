@@ -14,12 +14,7 @@ const { ui } = injectTabsContext();
 </script>
 
 <template>
-  <TabsList
-    :as="as"
-    :as-child="asChild"
-    :loop="loop"
-    :class="ui.list({ class: props.class })"
-  >
+  <TabsList :as="as" :as-child="asChild" :loop="loop" :class="ui.list({ class: props.class })">
     <slot></slot>
   </TabsList>
 </template>

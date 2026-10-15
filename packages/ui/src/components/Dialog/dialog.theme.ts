@@ -5,22 +5,21 @@ import { tv } from "../../utils/tv";
 export const dialog = tv({
   slots: {
     overlay: [
-      "bg-overlay fixed inset-x-0 inset-y-0",
-      "motion-safe:data-[state=open]:animate-fade-in motion-safe:data-[state=closed]:animate-fade-out",
+      "fixed inset-x-0 inset-y-0 bg-overlay",
+      "motion-safe:data-[state=closed]:animate-fade-out motion-safe:data-[state=open]:animate-fade-in",
     ],
     content: [
-      "bg-surface border-line rounded-surface fixed top-1/2 right-1/2 flex max-h-[calc(100dvh-4rem)] w-[calc(100%-2rem)] translate-x-1/2 -translate-y-1/2 flex-col border shadow-xl",
-      "motion-safe:data-[state=open]:animate-pop-in motion-safe:data-[state=closed]:animate-pop-out",
+      "fixed top-1/2 right-1/2 flex max-h-[calc(100dvh-4rem)] w-[calc(100%-2rem)] translate-x-1/2 -translate-y-1/2 flex-col rounded-surface border border-line bg-surface shadow-xl",
+      "motion-safe:data-[state=closed]:animate-pop-out motion-safe:data-[state=open]:animate-pop-in",
     ],
     header:
-      "border-line flex items-center justify-between border-b py-1.5 ps-4 pe-1.5 [&_svg]:size-3.5 [&_svg]:shrink-0",
-    label: "text-fg-subtle text-meta font-mono uppercase",
+      "flex items-center justify-between border-b border-line py-1.5 ps-4 pe-1.5 [&_svg]:size-3.5 [&_svg]:shrink-0",
+    label: "font-mono text-meta text-fg-subtle uppercase",
     body: "flex min-h-0 flex-col gap-4 overflow-y-auto p-4",
     intro: "flex flex-col gap-1.5",
-    title: "text-fg text-heading-4",
+    title: "text-heading-4 text-fg",
     description: "text-fg-muted",
-    footer:
-      "border-line flex flex-col-reverse gap-2 border-t px-4 py-3 sm:flex-row sm:justify-end",
+    footer: "flex flex-col-reverse gap-2 border-t border-line px-4 py-3 sm:flex-row sm:justify-end",
   },
   variants: {
     size: {

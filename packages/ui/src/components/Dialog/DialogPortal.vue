@@ -7,12 +7,7 @@ defineProps<Props>();
 </script>
 
 <template>
-  <DialogPortal
-    :defer="defer"
-    :disabled="disabled"
-    :force-mount="forceMount"
-    :to="to"
-  >
+  <DialogPortal :defer="defer" :disabled="disabled" :force-mount="forceMount" :to="to">
     <slot></slot>
   </DialogPortal>
 </template>

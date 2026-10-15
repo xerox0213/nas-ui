@@ -22,7 +22,7 @@ onMounted(() => {
 
 <template>
   <div ref="root" class="p-6">
-    <h2 class="text-heading-2 mb-4">Radius</h2>
+    <h2 class="mb-4 text-heading-2">Radius</h2>
 
     <div class="grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-4">
       <div
@@ -30,10 +30,10 @@ onMounted(() => {
         :key="token.name"
         :class="token.utility"
         :data-token="token.name"
-        class="border-line bg-surface flex flex-col gap-1 border p-4"
+        class="flex flex-col gap-1 border border-line bg-surface p-4"
       >
-        <code class="text-label font-mono">{{ token.name }}</code>
-        <span class="text-caption text-fg-muted font-mono">
+        <code class="font-mono text-label">{{ token.name }}</code>
+        <span class="font-mono text-caption text-fg-muted">
           {{ token.utility }} · {{ values[token.name] }}
         </span>
       </div>

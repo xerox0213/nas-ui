@@ -23,11 +23,7 @@ provideAlertDialogContext({ ui });
 </script>
 
 <template>
-  <AlertDialogRoot
-    v-model:open="open"
-    :default-open="defaultOpen"
-    :unmount-on-hide="unmountOnHide"
-  >
+  <AlertDialogRoot v-model:open="open" :default-open="defaultOpen" :unmount-on-hide="unmountOnHide">
     <template #default="slotArgs">
       <slot v-bind="slotArgs"></slot>
     </template>

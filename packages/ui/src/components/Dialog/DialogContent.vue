@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  DialogContent,
-  type DialogContentEmits,
-  type DialogContentProps,
-} from "reka-ui";
+import { DialogContent, type DialogContentEmits, type DialogContentProps } from "reka-ui";
 
 import { injectDialogContext } from "./dialog.context";
 

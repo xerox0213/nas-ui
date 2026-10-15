@@ -1,29 +1,29 @@
 <script lang="ts">
 const button = tv({
-  base: "rounded-base inline-flex items-center justify-center border transition-colors [&_svg]:shrink-0",
+  base: "inline-flex items-center justify-center rounded-base border transition-colors [&_svg]:shrink-0",
   variants: {
     variant: {
       primary: [
-        "bg-primary border-primary hover:border-primary-hover hover:bg-primary-hover text-on-primary",
-        "disabled:bg-disabled disabled:border-line-disabled disabled:text-fg-disabled",
+        "border-primary bg-primary text-on-primary hover:border-primary-hover hover:bg-primary-hover",
+        "disabled:border-line-disabled disabled:bg-disabled disabled:text-fg-disabled",
       ],
       secondary: [
-        "bg-control hover:bg-hover border-line-control hover:border-line-control-hover text-fg",
-        "disabled:bg-disabled disabled:border-line-disabled disabled:text-fg-disabled",
+        "border-line-control bg-control text-fg hover:border-line-control-hover hover:bg-hover",
+        "disabled:border-line-disabled disabled:bg-disabled disabled:text-fg-disabled",
       ],
       ghost: [
-        "text-fg-muted hover:text-fg hover:bg-hover border-transparent",
-        "disabled:text-fg-disabled disabled:bg-transparent",
+        "border-transparent text-fg-muted hover:bg-hover hover:text-fg",
+        "disabled:bg-transparent disabled:text-fg-disabled",
       ],
       danger: [
-        "bg-danger border-danger hover:border-danger-hover hover:bg-danger-hover text-on-danger",
-        "disabled:text-fg-disabled disabled:border-line-disabled disabled:bg-disabled",
+        "border-danger bg-danger text-on-danger hover:border-danger-hover hover:bg-danger-hover",
+        "disabled:border-line-disabled disabled:bg-disabled disabled:text-fg-disabled",
       ],
     },
     size: {
       sm: "gap-1.5 px-2.5 py-1.25 text-xs data-only-icon:p-1.25 [&_svg]:size-3.5",
-      md: "text-label gap-2 px-3 py-1.25 data-only-icon:p-1.25 [&_svg]:size-4",
-      lg: "text-label gap-2 px-4 py-1.75 data-only-icon:p-1.75 [&_svg]:size-4",
+      md: "gap-2 px-3 py-1.25 text-label data-only-icon:p-1.25 [&_svg]:size-4",
+      lg: "gap-2 px-4 py-1.75 text-label data-only-icon:p-1.75 [&_svg]:size-4",
     },
   },
 });

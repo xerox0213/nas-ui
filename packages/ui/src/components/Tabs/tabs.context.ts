@@ -7,7 +7,4 @@ export type TabsCtx = {
   ui: ComputedRef<ReturnType<typeof tabs>>;
 };
 
-export const [provideTabsContext, injectTabsContext] = createContext<TabsCtx>(
-  "tabs",
-  "TabsRoot",
-);
+export const [provideTabsContext, injectTabsContext] = createContext<TabsCtx>("tabs", "TabsRoot");

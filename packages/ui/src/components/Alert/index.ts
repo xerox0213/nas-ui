@@ -1,9 +1,6 @@
 export type { Props as AlertActionsProps } from "./AlertActions.vue";
 export { default as AlertActions } from "./AlertActions.vue";
-export type {
-  Emits as AlertCloseEmits,
-  Props as AlertCloseProps,
-} from "./AlertClose.vue";
+export type { Emits as AlertCloseEmits, Props as AlertCloseProps } from "./AlertClose.vue";
 export { default as AlertClose } from "./AlertClose.vue";
 export type { Props as AlertDescriptionProps } from "./AlertDescription.vue";
 export { default as AlertDescription } from "./AlertDescription.vue";

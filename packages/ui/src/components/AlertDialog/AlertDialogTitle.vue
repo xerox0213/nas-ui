@@ -14,11 +14,7 @@ const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
-  <AlertDialogTitle
-    :as="as"
-    :as-child="asChild"
-    :class="ui.title({ class: props.class })"
-  >
+  <AlertDialogTitle :as="as" :as-child="asChild" :class="ui.title({ class: props.class })">
     <slot></slot>
   </AlertDialogTitle>
 </template>

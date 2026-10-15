@@ -1,15 +1,13 @@
 import js from "@eslint/js";
-import { defineConfig, globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
 import storybook from "eslint-plugin-storybook";
 import pluginVue from "eslint-plugin-vue";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
   globalIgnores(["**/dist/**"]),
-
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
     plugins: { js },
@@ -18,11 +16,8 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
-
   tseslint.configs.recommended,
-
   pluginVue.configs["flat/recommended"],
-
   {
     files: ["**/*.vue"],
     languageOptions: {
@@ -31,7 +26,6 @@ export default defineConfig([
       },
     },
   },
-
   {
     files: ["packages/ui/**/*.vue"],
     rules: {
@@ -40,18 +34,6 @@ export default defineConfig([
       "vue/require-default-prop": "off",
     },
   },
-
-  {
-    plugins: {
-      "simple-import-sort": simpleImportSort,
-    },
-    rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
-    },
-  },
-
   storybook.configs["flat/recommended"],
-
   eslintConfigPrettier,
 ]);

@@ -38,9 +38,7 @@ import {
       <TabsList>
         <TabsIndicator />
         <TabsTrigger value="account"><TabsTriggerNumber />Account</TabsTrigger>
-        <TabsTrigger value="password"
-          >Password<TabsTriggerNumber
-        /></TabsTrigger>
+        <TabsTrigger value="password">Password<TabsTriggerNumber /></TabsTrigger>
         <TabsTrigger value="billing"><TabsTriggerNumber />Billing</TabsTrigger>
       </TabsList>
       <TabsContent value="account">Account settings</TabsContent>
@@ -57,8 +55,8 @@ import {
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          Orders ship within 2 business days. Tracking is emailed as soon as the
-          parcel leaves our warehouse.
+          Orders ship within 2 business days. Tracking is emailed as soon as the parcel leaves our
+          warehouse.
         </AccordionContent>
       </AccordionItem>
 
@@ -70,8 +68,7 @@ import {
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          You have 30 days to return an item. The refund is issued to the
-          original payment method.
+          You have 30 days to return an item. The refund is issued to the original payment method.
         </AccordionContent>
       </AccordionItem>
 
@@ -82,9 +79,7 @@ import {
             <AccordionChevron />
           </AccordionTrigger>
         </AccordionHeader>
-        <AccordionContent>
-          All products are covered for two years.
-        </AccordionContent>
+        <AccordionContent> All products are covered for two years. </AccordionContent>
       </AccordionItem>
     </AccordionRoot>
 
@@ -107,10 +102,7 @@ import {
         <CardIntro>
           <CardTitle>
             <CardLink as-child>
-              <a
-                href="https://ui.shadcn.com/docs/components/base/card#image"
-                target="_blank"
-              >
+              <a href="https://ui.shadcn.com/docs/components/base/card#image" target="_blank">
                 Carte accessible
               </a>
             </CardLink>

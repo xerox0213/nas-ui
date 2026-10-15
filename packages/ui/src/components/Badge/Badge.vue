@@ -1,21 +1,17 @@
 <script lang="ts">
 const badge = tv({
-  base: "rounded-base inline-flex items-center border [&_svg]:shrink-0",
+  base: "inline-flex items-center rounded-base border [&_svg]:shrink-0",
   variants: {
     variant: {
-      success:
-        "bg-success-subtle border-line-success-subtle text-on-success-subtle",
-      warning:
-        "bg-warning-subtle border-line-warning-subtle text-on-warning-subtle",
-      danger:
-        "bg-danger-subtle border-line-danger-subtle text-on-danger-subtle",
-      neutral:
-        "bg-neutral-subtle border-line-neutral-subtle text-on-neutral-subtle",
+      success: "border-line-success-subtle bg-success-subtle text-on-success-subtle",
+      warning: "border-line-warning-subtle bg-warning-subtle text-on-warning-subtle",
+      danger: "border-line-danger-subtle bg-danger-subtle text-on-danger-subtle",
+      neutral: "border-line-neutral-subtle bg-neutral-subtle text-on-neutral-subtle",
     },
     size: {
       sm: "gap-1.5 px-1.5 py-0.5 text-xs [&_svg]:size-3.5",
       md: "gap-1.5 px-2 py-1 text-xs [&_svg]:size-3.5",
-      lg: "text-label gap-2 px-2.5 py-1 [&_svg]:size-4",
+      lg: "gap-2 px-2.5 py-1 text-label [&_svg]:size-4",
     },
   },
 });
@@ -59,11 +55,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <Primitive
-    :as="as"
-    :as-child="asChild"
-    :class="badge({ variant, size, class: props.class })"
-  >
+  <Primitive :as="as" :as-child="asChild" :class="badge({ variant, size, class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

@@ -14,11 +14,7 @@ const { ui } = injectAccordionContext();
 </script>
 
 <template>
-  <AccordionHeader
-    :as="as"
-    :as-child="asChild"
-    :class="ui.header({ class: props.class })"
-  >
+  <AccordionHeader :as="as" :as-child="asChild" :class="ui.header({ class: props.class })">
     <slot></slot>
   </AccordionHeader>
 </template>

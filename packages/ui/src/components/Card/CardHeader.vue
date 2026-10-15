@@ -14,11 +14,7 @@ const { ui } = injectCardContext();
 </script>
 
 <template>
-  <Primitive
-    :as="as"
-    :as-child="asChild"
-    :class="ui.header({ class: props.class })"
-  >
+  <Primitive :as="as" :as-child="asChild" :class="ui.header({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

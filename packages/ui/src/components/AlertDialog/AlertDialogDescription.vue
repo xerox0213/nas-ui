@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  AlertDialogDescription,
-  type AlertDialogDescriptionProps,
-} from "reka-ui";
+import { AlertDialogDescription, type AlertDialogDescriptionProps } from "reka-ui";
 
 import { injectAlertDialogContext } from "./alert-dialog.context";
 

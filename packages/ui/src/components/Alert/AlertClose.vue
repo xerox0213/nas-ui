@@ -37,10 +37,7 @@ const closeId = useId();
 const slots = useSlots();
 
 const showPrimitive = computed(
-  () =>
-    props.as !== undefined ||
-    props.asChild !== undefined ||
-    slots.default !== undefined,
+  () => props.as !== undefined || props.asChild !== undefined || slots.default !== undefined,
 );
 
 const onClick = () => {

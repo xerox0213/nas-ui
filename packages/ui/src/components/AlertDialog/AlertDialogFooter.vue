@@ -19,11 +19,7 @@ const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
-  <Primitive
-    :as="as"
-    :as-child="asChild"
-    :class="ui.footer({ class: props.class })"
-  >
+  <Primitive :as="as" :as-child="asChild" :class="ui.footer({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

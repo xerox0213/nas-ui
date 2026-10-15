@@ -28,13 +28,7 @@ const props = defineProps<Props>();
   </DialogClose>
 
   <DialogClose v-else as-child>
-    <Button
-      variant="ghost"
-      size="sm"
-      only-icon
-      :class="props.class"
-      v-bind="$attrs"
-    >
+    <Button variant="ghost" size="sm" only-icon :class="props.class" v-bind="$attrs">
       <X />
       <span class="sr-only">Close</span>
     </Button>

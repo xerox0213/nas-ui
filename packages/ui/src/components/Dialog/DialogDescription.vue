@@ -14,11 +14,7 @@ const { ui } = injectDialogContext();
 </script>
 
 <template>
-  <DialogDescription
-    :as="as"
-    :as-child="asChild"
-    :class="ui.description({ class: props.class })"
-  >
+  <DialogDescription :as="as" :as-child="asChild" :class="ui.description({ class: props.class })">
     <slot></slot>
   </DialogDescription>
 </template>

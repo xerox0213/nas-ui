@@ -2,10 +2,7 @@ export type { Props as DialogBodyProps } from "./DialogBody.vue";
 export { default as DialogBody } from "./DialogBody.vue";
 export type { Props as DialogCloseProps } from "./DialogClose.vue";
 export { default as DialogClose } from "./DialogClose.vue";
-export type {
-  Emits as DialogContentEmits,
-  Props as DialogContentProps,
-} from "./DialogContent.vue";
+export type { Emits as DialogContentEmits, Props as DialogContentProps } from "./DialogContent.vue";
 export { default as DialogContent } from "./DialogContent.vue";
 export type { Props as DialogDescriptionProps } from "./DialogDescription.vue";
 export { default as DialogDescription } from "./DialogDescription.vue";

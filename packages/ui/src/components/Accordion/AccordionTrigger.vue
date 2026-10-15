@@ -14,11 +14,7 @@ const { ui } = injectAccordionContext();
 </script>
 
 <template>
-  <AccordionTrigger
-    :as="as"
-    :as-child="asChild"
-    :class="ui.trigger({ class: props.class })"
-  >
+  <AccordionTrigger :as="as" :as-child="asChild" :class="ui.trigger({ class: props.class })">
     <slot></slot>
   </AccordionTrigger>
 </template>

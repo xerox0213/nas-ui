@@ -15,7 +15,6 @@ jobs:
       - name: setup pnpm with runtime
         uses: pnpm/setup@v3
         with:
-          runtime: node@lts
           cache: true
       - name: format
         run: pnpm fmt:check

@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: clone project
         uses: actions/checkout@v7
-      - name: setup pnpm with runtime
-        uses: pnpm/setup@v3
         with:
-          cache: true
+          persist-credentials: false
+      - uses: jdx/mise-action@v5
+      - name: install deps
+        run: pnpm i --frozen-lockfile
       - name: format
         run: pnpm fmt:check
       - name: lint

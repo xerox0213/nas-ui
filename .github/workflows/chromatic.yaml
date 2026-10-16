@@ -17,11 +17,11 @@ jobs:
       - name: clone project
         uses: actions/checkout@v7
         with:
+          persist-credentials: false
           fetch-depth: 0
-      - name: setup pnpm with runtime
-        uses: pnpm/setup@v3
-        with:
-          cache: true
+      - uses: jdx/mise-action@v5
+      - name: install deps
+        run: pnpm i --frozen-lockfile
       - name: Run chromatic
         id: chromatic
         uses: chromaui/action@latest

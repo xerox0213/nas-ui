@@ -32,17 +32,5 @@
     "!(*.{js,ts,vue})": [
       "oxfmt --no-error-on-unmatched-pattern"
     ]
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^12.11.2",
-      "onFail": "download"
-    },
-    "runtime": {
-      "name": "node",
-      "version": "^24.0.0",
-      "onFail": "download"
-    }
   }
 }

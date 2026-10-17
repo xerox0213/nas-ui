@@ -1,0 +1,10 @@
+{
+  "tailwindCSS.classFunctions": ["tv"],
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "oxc.enable.oxlint": false,
+  "eslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}

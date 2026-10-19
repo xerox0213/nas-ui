@@ -2,15 +2,8 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "sortPackageJson": true,
   "sortImports": true,
-  "overrides": [
-    {
-      "files": ["./packages/ui/**", "./packages/playground/**"],
-      "options": {
-        "sortTailwindcss": {
-          "stylesheet": "./packages/ui/src/index.css",
-          "functions": ["tv", "cn", "cx"]
-        }
-      }
-    }
-  ]
+  "sortTailwindcss": {
+    "stylesheet": "./packages/ui/src/index.css",
+    "functions": ["tv", "cn", "cx"]
+  }
 }

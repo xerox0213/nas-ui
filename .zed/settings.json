@@ -115,7 +115,7 @@
       ]
     },
     "Vue.js": {
-      "language_servers": ["!oxlint", "..."],
+      "language_servers": ["!oxlint", "vue-language-server", "vtsls", "..."],
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       },

@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "dev": "tsdown --watch",
+    "dev": "tsdown --watch --no-clean",
     "build": "vue-tsc -b && tsdown",
     "typecheck": "vue-tsc -b",
     "storybook": "storybook dev -p 6006",

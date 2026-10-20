@@ -82,7 +82,8 @@
 
   /* ---------- Control ---------- */
   --color-control: light-dark(var(--color-white), var(--color-stone-800));
-  --color-control-emphasis: light-dark(var(--color-stone-300), var(--color-stone-700));
+  --color-control-emphasis: light-dark(var(--color-stone-400), var(--color-stone-600));
+  --color-control-emphasis-hover: light-dark(var(--color-stone-500), var(--color-stone-500));
   --color-line-control: light-dark(var(--color-stone-300), var(--color-stone-700));
   --color-line-control-hover: light-dark(var(--color-stone-400), var(--color-stone-600));
 

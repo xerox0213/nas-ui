@@ -21,6 +21,8 @@ import {
   CardRoot,
   CardTitle,
   Eyebrow,
+  SwitchRoot,
+  SwitchThumb,
   TabsContent,
   TabsIndicator,
   TabsList,
@@ -45,6 +47,10 @@ import {
       <TabsContent value="password"> Change your password </TabsContent>
       <TabsContent value="billing"> Billing details </TabsContent>
     </TabsRoot>
+
+    <SwitchRoot>
+      <SwitchThumb />
+    </SwitchRoot>
 
     <AccordionRoot class="max-w-lg" collapsible>
       <AccordionItem value="shipping">

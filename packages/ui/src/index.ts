@@ -7,4 +7,5 @@ export * from "./components/Card";
 export * from "./components/Dialog";
 export * from "./components/Eyebrow";
 export * from "./components/Heading";
+export * from "./components/Switch";
 export * from "./components/Tabs";

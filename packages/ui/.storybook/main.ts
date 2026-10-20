@@ -1,4 +1,7 @@
 import { defineMain } from "@storybook/vue3-vite/node";
+import tailwindcss from "@tailwindcss/vite";
+import vue from "@vitejs/plugin-vue";
+import { mergeConfig } from "vite";
 
 export default defineMain({
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -13,4 +16,5 @@ export default defineMain({
       },
     },
   },
+  viteFinal: (config) => mergeConfig(config, { plugins: [vue(), tailwindcss()] }),
 });

@@ -7,5 +7,5 @@ export default defineConfig({
   platform: "neutral",
   plugins: [vue({ isProduction: true })],
   copy: "./src/index.css",
-  dts: { vue: true },
+  dts: { vue: true, sourcemap: true },
 });

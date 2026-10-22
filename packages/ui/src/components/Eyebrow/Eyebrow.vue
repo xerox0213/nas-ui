@@ -1,7 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const eyebrow = tv({
+  base: "font-mono text-meta text-fg-subtle uppercase",
+});
+</script>
+
 <script setup lang="ts">
 import { Primitive, type PrimitiveProps } from "reka-ui";
-
-import { eyebrow } from "./eyebrow.theme";
 
 export type Props = PrimitiveProps & {
   /** Extra classes, merged over the eyebrow classes. */

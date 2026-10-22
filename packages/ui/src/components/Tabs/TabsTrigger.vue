@@ -1,7 +1,23 @@
-<script setup lang="ts">
-import { TabsTrigger, type TabsTriggerProps } from "reka-ui";
+<script lang="ts">
+import { tv } from "../../utils/tv";
 
-import { injectTabsContext } from "./tabs.context";
+export const tabsTrigger = tv({
+  base: [
+    "group relative z-2 inline-flex items-center gap-2 px-4 py-1.5 text-label text-fg-subtle transition-colors [counter-increment:tabs] hover:text-fg [&_svg]:size-4 [&_svg]:shrink-0",
+    "data-[state=active]:text-fg",
+    "data-disabled:bg-transparent data-disabled:text-fg-disabled",
+  ],
+  variants: {
+    orientation: {
+      horizontal: "rounded-t-surface",
+      vertical: "min-w-40 rounded-l-surface",
+    },
+  },
+});
+</script>
+
+<script setup lang="ts">
+import { injectTabsRootContext, TabsTrigger, type TabsTriggerProps } from "reka-ui";
 
 export type Props = TabsTriggerProps & {
   /** Extra classes, merged over the trigger classes. */
@@ -10,7 +26,7 @@ export type Props = TabsTriggerProps & {
 
 const props = defineProps<Props>();
 
-const { ui } = injectTabsContext();
+const { orientation } = injectTabsRootContext();
 </script>
 
 <template>
@@ -19,7 +35,7 @@ const { ui } = injectTabsContext();
     :as-child="asChild"
     :value="value"
     :disabled="disabled"
-    :class="ui.trigger({ class: props.class })"
+    :class="tabsTrigger({ orientation, class: props.class })"
   >
     <slot></slot>
   </TabsTrigger>

@@ -1,7 +1,19 @@
-<script setup lang="ts">
-import { TabsContent, type TabsContentProps } from "reka-ui";
+<script lang="ts">
+import { tv } from "../../utils/tv";
 
-import { injectTabsContext } from "./tabs.context";
+export const tabsContent = tv({
+  base: "border-line bg-surface p-4",
+  variants: {
+    orientation: {
+      horizontal: "rounded-b-surface border-x border-b",
+      vertical: "grow rounded-r-surface border-y border-r",
+    },
+  },
+});
+</script>
+
+<script setup lang="ts">
+import { injectTabsRootContext, TabsContent, type TabsContentProps } from "reka-ui";
 
 export type Props = TabsContentProps & {
   /** Extra classes, merged over the panel classes. */
@@ -10,7 +22,7 @@ export type Props = TabsContentProps & {
 
 const props = defineProps<Props>();
 
-const { ui } = injectTabsContext();
+const { orientation } = injectTabsRootContext();
 </script>
 
 <template>
@@ -19,7 +31,7 @@ const { ui } = injectTabsContext();
     :as-child="asChild"
     :value="value"
     :force-mount="forceMount"
-    :class="ui.content({ class: props.class })"
+    :class="tabsContent({ orientation, class: props.class })"
   >
     <slot></slot>
   </TabsContent>

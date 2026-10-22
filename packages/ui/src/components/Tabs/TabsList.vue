@@ -1,7 +1,19 @@
-<script setup lang="ts">
-import { TabsList, type TabsListProps } from "reka-ui";
+<script lang="ts">
+import { tv } from "../../utils/tv";
 
-import { injectTabsContext } from "./tabs.context";
+export const tabsList = tv({
+  base: "relative isolate flex border-line [counter-reset:tabs]",
+  variants: {
+    orientation: {
+      horizontal: "flex-row border-b",
+      vertical: "flex-col border-r",
+    },
+  },
+});
+</script>
+
+<script setup lang="ts">
+import { injectTabsRootContext, TabsList, type TabsListProps } from "reka-ui";
 
 export type Props = TabsListProps & {
   /** Extra classes, merged over the list classes. */
@@ -10,11 +22,16 @@ export type Props = TabsListProps & {
 
 const props = defineProps<Props>();
 
-const { ui } = injectTabsContext();
+const { orientation } = injectTabsRootContext();
 </script>
 
 <template>
-  <TabsList :as="as" :as-child="asChild" :loop="loop" :class="ui.list({ class: props.class })">
+  <TabsList
+    :as="as"
+    :as-child="asChild"
+    :loop="loop"
+    :class="tabsList({ orientation, class: props.class })"
+  >
     <slot></slot>
   </TabsList>
 </template>

@@ -1,10 +1,16 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const accordionRoot = tv({
+  base: "overflow-hidden rounded-surface border border-line bg-surface",
+});
+</script>
+
 <script setup lang="ts" generic="M extends boolean = false">
 import { AccordionRoot, type AccordionRootProps } from "reka-ui";
 import { computed } from "vue";
 
 import type { SingleOrMultiple } from "../../utils/types";
-import { provideAccordionContext } from "./accordion.context";
-import { accordion } from "./accordion.theme";
 
 export type Props<M extends boolean = false> = Omit<
   AccordionRootProps,
@@ -29,10 +35,6 @@ const modelValue = defineModel<SingleOrMultiple<M, string>>();
 const type = computed(() =>
   props.multiple || (props.multiple as unknown) === "" ? "multiple" : "single",
 );
-
-const ui = computed(() => accordion());
-
-provideAccordionContext({ ui });
 </script>
 
 <template>
@@ -46,7 +48,7 @@ provideAccordionContext({ ui });
     :disabled="disabled"
     orientation="vertical"
     :unmount-on-hide="unmountOnHide"
-    :class="ui.root({ class: props.class })"
+    :class="accordionRoot({ class: props.class })"
   >
     <template #default="slotArgs">
       <slot v-bind="slotArgs"></slot>

@@ -1,9 +1,19 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const tabsRoot = tv({
+  base: "flex",
+  variants: {
+    orientation: {
+      horizontal: "flex-col",
+      vertical: "flex-row",
+    },
+  },
+});
+</script>
+
 <script setup lang="ts">
 import { type StringOrNumber, TabsRoot, type TabsRootProps } from "reka-ui";
-import { computed } from "vue";
-
-import { provideTabsContext } from "./tabs.context";
-import { tabs } from "./tabs.theme";
 
 export type Props = Omit<TabsRootProps, "modelValue"> & {
   /** Extra classes, merged over the root classes. */
@@ -17,10 +27,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 /** Value of the active tab. */
 const modelValue = defineModel<StringOrNumber>();
-
-const ui = computed(() => tabs({ orientation: props.orientation }));
-
-provideTabsContext({ ui });
 </script>
 
 <template>
@@ -33,7 +39,7 @@ provideTabsContext({ ui });
     :unmount-on-hide="unmountOnHide"
     :default-value="defaultValue"
     :dir="dir"
-    :class="ui.base({ class: props.class })"
+    :class="tabsRoot({ orientation, class: props.class })"
   >
     <slot></slot>
   </TabsRoot>

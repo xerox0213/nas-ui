@@ -1,26 +1,14 @@
 <script setup lang="ts">
 import { DialogRoot, type DialogRootProps } from "reka-ui";
-import { computed } from "vue";
 
-import { provideDialogContext } from "./dialog.context";
-import { dialog, type DialogVariants } from "./dialog.theme";
+export type Props = Omit<DialogRootProps, "open">;
 
-export type Props = Omit<DialogRootProps, "open"> & {
-  /** Dialog width: `sm` suits confirmations, `md` forms, `lg` rich content. */
-  size?: DialogVariants["size"];
-};
-
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   modal: true,
   unmountOnHide: true,
-  size: "md",
 });
 
 const open = defineModel<boolean>("open");
-
-const ui = computed(() => dialog({ size: props.size }));
-
-provideDialogContext({ ui });
 </script>
 
 <template>

@@ -1,5 +1,7 @@
 <script lang="ts">
-const badge = tv({
+import { tv, type VariantProps } from "../../utils/tv";
+
+export const badge = tv({
   base: "inline-flex items-center rounded-base border [&_svg]:shrink-0",
   variants: {
     variant: {
@@ -17,12 +19,12 @@ const badge = tv({
 });
 
 type Variants = VariantProps<typeof badge>;
+</script>
 
-export type Props = {
-  /** Element or component to render as. */
-  as?: Component | AsTag;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+<script setup lang="ts">
+import { Primitive, type PrimitiveProps } from "reka-ui";
+
+export type Props = PrimitiveProps & {
   /** Status conveyed by the badge's color. */
   variant?: Variants["variant"];
   /** Badge size. */
@@ -30,22 +32,6 @@ export type Props = {
   /** Extra classes, merged over the variant classes. */
   class?: string;
 };
-
-/**
- * Badges label an item with a short status or category, such as "Active"
- * or "Failed". They are not interactive; for actions, use a button.
- * The label must state the status: don't rely on color alone.
- *
- * @summary labels an item with a short status or category
- */
-export default { name: "Badge" };
-</script>
-
-<script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
-
-import { tv, type VariantProps } from "../../utils/tv";
 
 const props = withDefaults(defineProps<Props>(), {
   as: "div",

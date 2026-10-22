@@ -59,7 +59,6 @@ const meta = preview.meta({
  * default close button.
  */
 export const Default = meta.story({
-  args: { size: "md" },
   render: (args: Props) => ({
     components: dialogComponents,
     setup() {
@@ -107,7 +106,6 @@ export const Default = meta.story({
  * The header and footer stay in place while the body scrolls.
  */
 export const ScrollableBody = meta.story({
-  args: { size: "md" },
   render: (args: Props) => ({
     components: dialogComponents,
     setup() {

@@ -1,8 +1,14 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const accordionChevron = tv({
+  base: "ml-auto text-fg-subtle transition group-hover:text-fg group-data-disabled:text-fg-disabled group-data-[state=open]:rotate-180",
+});
+</script>
+
 <script setup lang="ts">
 import { ChevronDown } from "@lucide/vue";
 import { Slot } from "reka-ui";
-
-import { injectAccordionContext } from "./accordion.context";
 
 export type Props = {
   /** Extra classes, merged over the chevron classes. */
@@ -10,12 +16,10 @@ export type Props = {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectAccordionContext();
 </script>
 
 <template>
-  <Slot :class="ui.chevron({ class: props.class })">
+  <Slot :class="accordionChevron({ class: props.class })">
     <slot>
       <ChevronDown />
     </slot>

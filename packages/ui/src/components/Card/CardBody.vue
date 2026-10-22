@@ -1,7 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const cardBody = tv({
+  base: "flex flex-col gap-4 p-4",
+});
+</script>
+
 <script setup lang="ts">
 import { Primitive, type PrimitiveProps } from "reka-ui";
-
-import { injectCardContext } from "./card.context";
 
 export type Props = PrimitiveProps & {
   /** Extra classes, merged over the body classes. */
@@ -9,12 +15,10 @@ export type Props = PrimitiveProps & {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectCardContext();
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.body({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="cardBody({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

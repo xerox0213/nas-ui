@@ -1,9 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const cardRoot = tv({
+  base: "relative isolate rounded-surface border border-line bg-surface",
+});
+</script>
+
 <script setup lang="ts">
 import { Primitive, type PrimitiveProps } from "reka-ui";
-import { computed } from "vue";
-
-import { provideCardContext } from "./card.context";
-import { card } from "./card.theme";
 
 export type Props = PrimitiveProps & {
   /** Extra classes, merged over the base classes. */
@@ -11,14 +15,10 @@ export type Props = PrimitiveProps & {
 };
 
 const props = defineProps<Props>();
-
-const ui = computed(() => card());
-
-provideCardContext({ ui });
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.base({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="cardRoot({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

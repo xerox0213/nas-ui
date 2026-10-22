@@ -1,9 +1,17 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const alertIcon = tv({
+  base: "col-start-1 col-end-2 row-start-1 row-end-2 mr-3 size-4 shrink-0 self-center",
+});
+</script>
+
 <script setup lang="ts">
 import { CircleCheck, CircleX, Info, TriangleAlert } from "@lucide/vue";
 import { Slot } from "reka-ui";
 import { computed } from "vue";
 
-import { injectAlertContext } from "./alert.context.ts";
+import { injectAlertContext } from "./AlertRoot.vue";
 
 export type Props = {
   /** Extra classes, merged over the icon classes. */
@@ -36,12 +44,10 @@ const icon = computed(() => {
     }
   }
 });
-
-const { ui } = injectAlertContext();
 </script>
 
 <template>
-  <Slot :class="ui.icon({ class: props.class })">
+  <Slot :class="alertIcon({ class: props.class })">
     <slot>
       <component :is="icon" />
     </slot>

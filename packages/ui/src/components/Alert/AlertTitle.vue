@@ -1,25 +1,28 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const alertTitle = tv({
+  base: "col-start-2 col-end-3 row-start-1 row-end-2 self-center text-label",
+});
+</script>
+
 <script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
 
-import { injectAlertContext } from "./alert.context";
+import { injectAlertContext } from "./AlertRoot.vue";
 
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the title classes. */
   class?: string;
 };
 
 const props = defineProps<Props>();
 
-const { ui, titleId } = injectAlertContext();
+const { titleId } = injectAlertContext();
 </script>
 
 <template>
-  <Primitive :id="titleId" :as="as" :as-child="asChild" :class="ui.title({ class: props.class })">
+  <Primitive :id="titleId" :as="as" :as-child="asChild" :class="alertTitle({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

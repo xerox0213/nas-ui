@@ -1,25 +1,25 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+import { dialogBody } from "../Dialog/DialogBody.vue";
+
+export const alertDialogBody = tv({
+  extend: dialogBody,
+});
+</script>
+
 <script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
 
-import { injectAlertDialogContext } from "./alert-dialog.context";
-
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the body classes. */
   class?: string;
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.body({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="alertDialogBody({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

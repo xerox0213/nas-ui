@@ -1,7 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const cardRaised = tv({
+  base: "relative z-1",
+});
+</script>
+
 <script setup lang="ts">
 import { Slot } from "reka-ui";
-
-import { injectCardContext } from "./card.context";
 
 export type Props = {
   /** Extra classes, merged over the raised classes. */
@@ -9,12 +15,10 @@ export type Props = {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectCardContext();
 </script>
 
 <template>
-  <Slot :class="ui.raised({ class: props.class })">
+  <Slot :class="cardRaised({ class: props.class })">
     <slot></slot>
   </Slot>
 </template>

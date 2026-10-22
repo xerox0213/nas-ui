@@ -1,15 +1,32 @@
+<script lang="ts">
+import { tv, type VariantProps } from "../../utils/tv";
+
+export const heading = tv({
+  base: "font-sans",
+  variants: {
+    level: {
+      display: "text-display",
+      "1": "text-heading-1",
+      "2": "text-heading-2",
+      "3": "text-heading-3",
+      "4": "text-heading-4",
+    },
+  },
+});
+
+type Variants = VariantProps<typeof heading>;
+</script>
+
 <script setup lang="ts">
 import { Primitive, type PrimitiveProps } from "reka-ui";
 import { computed } from "vue";
-
-import { heading, type HeadingVariants } from "./heading.theme";
 
 export type Props = PrimitiveProps & {
   /**
    * Position in the page outline. Sets the tag (`1`–`4` render `h1`–`h4`,
    * `display` renders an `h1`) and the matching type style.
    */
-  level: NonNullable<HeadingVariants["level"]>;
+  level: NonNullable<Variants["level"]>;
   /** Extra classes, merged over the level classes. */
   class?: string;
 };

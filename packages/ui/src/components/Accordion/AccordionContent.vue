@@ -1,7 +1,16 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const accordionContent = tv({
+  base: [
+    "overflow-hidden px-4 pb-4 text-fg-muted",
+    "motion-safe:data-[state=closed]:animate-accordion-up motion-safe:data-[state=open]:animate-accordion-down",
+  ],
+});
+</script>
+
 <script setup lang="ts">
 import { AccordionContent, type AccordionContentProps } from "reka-ui";
-
-import { injectAccordionContext } from "./accordion.context";
 
 export type Props = AccordionContentProps & {
   /** Extra classes, merged over the content classes. */
@@ -9,8 +18,6 @@ export type Props = AccordionContentProps & {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectAccordionContext();
 </script>
 
 <template>
@@ -18,7 +25,7 @@ const { ui } = injectAccordionContext();
     :as="as"
     :as-child="asChild"
     :force-mount="forceMount"
-    :class="ui.content({ class: props.class })"
+    :class="accordionContent({ class: props.class })"
   >
     <slot></slot>
   </AccordionContent>

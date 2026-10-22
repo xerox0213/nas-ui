@@ -1,25 +1,24 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const dialogFooter = tv({
+  base: "flex flex-col-reverse gap-2 border-t border-line px-4 py-3 sm:flex-row sm:justify-end",
+});
+</script>
+
 <script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
 
-import { injectDialogContext } from "./dialog.context";
-
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the footer classes. */
   class?: string;
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectDialogContext();
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.footer({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="dialogFooter({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

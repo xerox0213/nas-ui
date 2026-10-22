@@ -1,7 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const accordionItem = tv({
+  base: "group border-line not-last:border-b",
+});
+</script>
+
 <script setup lang="ts">
 import { AccordionItem, type AccordionItemProps } from "reka-ui";
-
-import { injectAccordionContext } from "./accordion.context";
 
 export type Props = AccordionItemProps & {
   /** Extra classes, merged over the item classes. */
@@ -11,8 +17,6 @@ export type Props = AccordionItemProps & {
 const props = withDefaults(defineProps<Props>(), {
   unmountOnHide: undefined,
 });
-
-const { ui } = injectAccordionContext();
 </script>
 
 <template>
@@ -22,7 +26,7 @@ const { ui } = injectAccordionContext();
     :disabled="disabled"
     :unmount-on-hide="unmountOnHide"
     :value="value"
-    :class="ui.item({ class: props.class })"
+    :class="accordionItem({ class: props.class })"
   >
     <template #default="slotArgs">
       <slot v-bind="slotArgs"></slot>

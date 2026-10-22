@@ -1,25 +1,24 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const dialogIntro = tv({
+  base: "flex flex-col gap-1.5",
+});
+</script>
+
 <script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
 
-import { injectDialogContext } from "./dialog.context";
-
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the intro classes. */
   class?: string;
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectDialogContext();
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.intro({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="dialogIntro({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

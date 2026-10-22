@@ -1,7 +1,14 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+import { dialogDescription } from "../Dialog/DialogDescription.vue";
+
+export const alertDialogDescription = tv({
+  extend: dialogDescription,
+});
+</script>
+
 <script setup lang="ts">
 import { AlertDialogDescription, type AlertDialogDescriptionProps } from "reka-ui";
-
-import { injectAlertDialogContext } from "./alert-dialog.context";
 
 export type Props = AlertDialogDescriptionProps & {
   /** Extra classes, merged over the description classes. */
@@ -9,15 +16,13 @@ export type Props = AlertDialogDescriptionProps & {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
   <AlertDialogDescription
     :as="as"
     :as-child="asChild"
-    :class="ui.description({ class: props.class })"
+    :class="alertDialogDescription({ class: props.class })"
   >
     <slot></slot>
   </AlertDialogDescription>

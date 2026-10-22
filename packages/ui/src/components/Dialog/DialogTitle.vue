@@ -1,7 +1,13 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const dialogTitle = tv({
+  base: "text-heading-4 text-fg",
+});
+</script>
+
 <script setup lang="ts">
 import { DialogTitle, type DialogTitleProps } from "reka-ui";
-
-import { injectDialogContext } from "./dialog.context";
 
 export type Props = DialogTitleProps & {
   /** Extra classes, merged over the title classes. */
@@ -9,12 +15,10 @@ export type Props = DialogTitleProps & {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectDialogContext();
 </script>
 
 <template>
-  <DialogTitle :as="as" :as-child="asChild" :class="ui.title({ class: props.class })">
+  <DialogTitle :as="as" :as-child="asChild" :class="dialogTitle({ class: props.class })">
     <slot></slot>
   </DialogTitle>
 </template>

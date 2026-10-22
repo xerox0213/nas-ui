@@ -1,7 +1,14 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+import { dialogOverlay } from "../Dialog/DialogOverlay.vue";
+
+export const alertDialogOverlay = tv({
+  extend: dialogOverlay,
+});
+</script>
+
 <script setup lang="ts">
 import { AlertDialogOverlay, type AlertDialogOverlayProps } from "reka-ui";
-
-import { injectAlertDialogContext } from "./alert-dialog.context";
 
 export type Props = AlertDialogOverlayProps & {
   /** Extra classes, merged over the overlay classes. */
@@ -9,8 +16,6 @@ export type Props = AlertDialogOverlayProps & {
 };
 
 const props = defineProps<Props>();
-
-const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
@@ -18,7 +23,7 @@ const { ui } = injectAlertDialogContext();
     :as="as"
     :as-child="asChild"
     :force-mount="forceMount"
-    :class="ui.overlay({ class: props.class })"
+    :class="alertDialogOverlay({ class: props.class })"
   >
     <slot></slot>
   </AlertDialogOverlay>

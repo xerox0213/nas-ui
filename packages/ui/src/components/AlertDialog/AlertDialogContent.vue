@@ -1,3 +1,14 @@
+<script lang="ts">
+import { tv, type VariantProps } from "../../utils/tv";
+import { dialogContent } from "../Dialog/DialogContent.vue";
+
+export const alertDialogContent = tv({
+  extend: dialogContent,
+});
+
+type Variants = VariantProps<typeof alertDialogContent>;
+</script>
+
 <script setup lang="ts">
 import {
   AlertDialogContent,
@@ -5,9 +16,9 @@ import {
   type AlertDialogContentProps,
 } from "reka-ui";
 
-import { injectAlertDialogContext } from "./alert-dialog.context";
-
 export type Props = AlertDialogContentProps & {
+  /** Dialog width: `sm` suits confirmations, `md` forms, `lg` rich content. */
+  size?: Variants["size"];
   /** Extra classes, merged over the content classes. */
   class?: string;
 };
@@ -16,11 +27,10 @@ export type Emits = AlertDialogContentEmits;
 
 const props = withDefaults(defineProps<Props>(), {
   disableOutsidePointerEvents: undefined,
+  size: "sm",
 });
 
 const emits = defineEmits<Emits>();
-
-const { ui } = injectAlertDialogContext();
 </script>
 
 <template>
@@ -29,7 +39,7 @@ const { ui } = injectAlertDialogContext();
     :as-child="asChild"
     :disable-outside-pointer-events="disableOutsidePointerEvents"
     :force-mount="forceMount"
-    :class="ui.content({ class: props.class })"
+    :class="alertDialogContent({ size, class: props.class })"
     @escape-key-down="emits('escapeKeyDown', $event)"
     @pointer-down-outside="emits('pointerDownOutside', $event)"
     @focus-outside="emits('focusOutside', $event)"

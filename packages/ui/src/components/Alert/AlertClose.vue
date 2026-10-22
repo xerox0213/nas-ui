@@ -1,36 +1,40 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const alertClose = tv({
+  base: "col-start-3 col-end-4 row-start-1 row-end-2 self-center",
+});
+</script>
+
 <script setup lang="ts">
 import { X } from "@lucide/vue";
-import { type AsTag, Primitive } from "reka-ui";
-import { type Component, computed, useId, useSlots } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
+import { computed, useId, useSlots } from "vue";
 
 import Button from "../Button/Button.vue";
-import { injectAlertContext } from "./alert.context.ts";
+import { injectAlertContext } from "./AlertRoot.vue";
 
-defineOptions({
-  inheritAttrs: false,
-});
-
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the close button classes. */
   class?: string;
 };
-
-const props = withDefaults(defineProps<Props>(), {
-  asChild: undefined,
-});
 
 export type Emits = {
   /** Emitted before closing. Call `event.preventDefault()` to keep the alert open. */
   close: [event: CustomEvent];
 };
 
+defineOptions({
+  inheritAttrs: false,
+});
+
+const props = withDefaults(defineProps<Props>(), {
+  asChild: undefined,
+});
+
 const emits = defineEmits<Emits>();
 
-const { ui, close, titleId } = injectAlertContext();
+const { close, titleId } = injectAlertContext();
 
 const closeId = useId();
 
@@ -52,7 +56,7 @@ const onClick = () => {
     v-if="showPrimitive"
     :as="as"
     :as-child="asChild"
-    :class="ui.close({ class: props.class })"
+    :class="alertClose({ class: props.class })"
     v-bind="$attrs"
     @click="onClick"
   >
@@ -67,7 +71,7 @@ const onClick = () => {
     variant="ghost"
     size="sm"
     only-icon
-    :class="ui.close({ class: props.class })"
+    :class="alertClose({ class: props.class })"
     v-bind="$attrs"
     @click="onClick"
   >

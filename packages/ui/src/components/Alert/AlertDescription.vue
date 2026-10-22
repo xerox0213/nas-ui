@@ -1,14 +1,15 @@
+<script lang="ts">
+import { tv } from "../../utils/tv";
+
+export const alertDescription = tv({
+  base: "col-start-2 col-end-3 row-start-2 row-end-3 mt-0.5 text-fg-muted",
+});
+</script>
+
 <script setup lang="ts">
-import { type AsTag, Primitive } from "reka-ui";
-import type { Component } from "vue";
+import { Primitive, type PrimitiveProps } from "reka-ui";
 
-import { injectAlertContext } from "./alert.context";
-
-export type Props = {
-  /** Element or component to render as. */
-  as?: AsTag | Component;
-  /** Render the child element instead, merging props and behavior onto it. */
-  asChild?: boolean;
+export type Props = PrimitiveProps & {
   /** Extra classes, merged over the description classes. */
   class?: string;
 };
@@ -16,12 +17,10 @@ export type Props = {
 const props = withDefaults(defineProps<Props>(), {
   as: "p",
 });
-
-const { ui } = injectAlertContext();
 </script>
 
 <template>
-  <Primitive :as="as" :as-child="asChild" :class="ui.description({ class: props.class })">
+  <Primitive :as="as" :as-child="asChild" :class="alertDescription({ class: props.class })">
     <slot></slot>
   </Primitive>
 </template>

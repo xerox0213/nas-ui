@@ -60,8 +60,8 @@
   --text-meta--letter-spacing: 0.04em;
 
   /* ---------- Radius ---------- */
-  --radius-base: 0.125rem;
-  --radius-surface: 0.25rem;
+  --radius-base: 0rem;
+  --radius-surface: 0rem;
 
   /* ---------- Backgrounds ---------- */
   --color-page: light-dark(var(--color-stone-50), var(--color-stone-900));

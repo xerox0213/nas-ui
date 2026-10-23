@@ -21,6 +21,7 @@ import {
   CardRoot,
   CardTitle,
   Eyebrow,
+  Input,
   SwitchRoot,
   SwitchThumb,
   TabsContent,
@@ -119,5 +120,7 @@ import {
         </CardIntro>
       </CardBody>
     </CardRoot>
+
+    <Input placeholder="email@example.com" invalid />
   </main>
 </template>

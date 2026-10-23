@@ -30,6 +30,7 @@ import {
   TabsRoot,
   TabsTrigger,
   TabsTriggerNumber,
+  Textarea,
 } from "@nas-ui/ui";
 </script>
 
@@ -122,5 +123,7 @@ import {
     </CardRoot>
 
     <Input placeholder="email@example.com" invalid />
+
+    <Textarea placeholder="Billie Jean is not my lover..." />
   </main>
 </template>

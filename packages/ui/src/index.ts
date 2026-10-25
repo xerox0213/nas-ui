@@ -8,6 +8,7 @@ export * from "./components/Dialog";
 export * from "./components/Eyebrow";
 export * from "./components/Heading";
 export * from "./components/Input";
+export * from "./components/Select";
 export * from "./components/Switch";
 export * from "./components/Tabs";
 export * from "./components/Textarea";

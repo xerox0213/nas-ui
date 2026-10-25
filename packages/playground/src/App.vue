@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Apple, Banana, Carrot, Cherry, Leaf, Salad, Wheat } from "@lucide/vue";
 import {
   AccordionChevron,
   AccordionContent,
@@ -22,6 +23,12 @@ import {
   CardTitle,
   Eyebrow,
   Input,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
   SwitchRoot,
   SwitchThumb,
   TabsContent,
@@ -32,11 +39,66 @@ import {
   TabsTriggerNumber,
   Textarea,
 } from "@nas-ui/ui";
+import { ref } from "vue";
+
+const fruit = ref<string>();
+const food = ref<string[]>([]);
 </script>
 
 <template>
   <main class="flex flex-col gap-8 p-8">
     <h1 class="text-4xl">Playground Nas UI</h1>
+
+    <SelectRoot v-model="fruit">
+      <SelectTrigger size="md" placeholder="Choose a fruit" />
+      <SelectContent>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="blueberry">Blueberry</SelectItem>
+        <SelectItem value="grapes" disabled>Grapes</SelectItem>
+        <SelectItem value="cherry">Cherry</SelectItem>
+        <SelectItem value="kiwi">Kiwi</SelectItem>
+        <SelectItem value="lemon">Lemon</SelectItem>
+        <SelectItem value="mango">Mango</SelectItem>
+        <SelectItem value="orange">Orange</SelectItem>
+        <SelectItem value="peach">Peach</SelectItem>
+        <SelectItem value="pear">Pear</SelectItem>
+        <SelectItem value="pineapple">Pineapple</SelectItem>
+        <SelectItem value="raspberry" disabled>Raspberry</SelectItem>
+        <SelectItem value="strawberry">Strawberry</SelectItem>
+        <SelectItem value="watermelon">Watermelon</SelectItem>
+        <SelectItem value="a-very-long-fruit">
+          A fruit with a much longer name than the others
+        </SelectItem>
+      </SelectContent>
+    </SelectRoot>
+
+    <p>Fruit: {{ fruit }}</p>
+
+    <SelectRoot v-model="food" multiple>
+      <SelectTrigger placeholder="Choose foods" />
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="apple"><Apple />Apple</SelectItem>
+          <SelectItem value="banana"><Banana />Banana</SelectItem>
+          <SelectItem value="cherry"><Cherry />Cherry</SelectItem>
+        </SelectGroup>
+        <SelectGroup>
+          <SelectLabel>Vegetables</SelectLabel>
+          <SelectItem value="carrot"><Carrot />Carrot</SelectItem>
+          <SelectItem value="leek"><Leaf />Leek</SelectItem>
+          <SelectItem value="spinach" disabled><Salad />Spinach</SelectItem>
+        </SelectGroup>
+        <SelectGroup>
+          <SelectLabel>Grains</SelectLabel>
+          <SelectItem value="rice"><Wheat />Rice</SelectItem>
+          <SelectItem value="quinoa"><Wheat />Quinoa</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </SelectRoot>
+
+    <p>Food: {{ food }}</p>
 
     <TabsRoot default-value="account" orientation="horizontal">
       <TabsList>

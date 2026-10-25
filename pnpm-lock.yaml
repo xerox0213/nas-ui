@@ -232,6 +232,9 @@ importers:
 
   packages/playground:
     dependencies:
+      '@lucide/vue':
+        specifier: ^1.61.0
+        version: 1.61.0(vue@3.5.44(typescript@6.0.3))
       '@nas-ui/ui':
         specifier: workspace:*
         version: link:../ui

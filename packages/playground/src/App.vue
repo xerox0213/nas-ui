@@ -23,6 +23,10 @@ import {
   CardTitle,
   Eyebrow,
   Input,
+  NumberFieldDecrement,
+  NumberFieldIncrement,
+  NumberFieldInput,
+  NumberFieldRoot,
   SelectContent,
   SelectGroup,
   SelectItem,
@@ -48,6 +52,18 @@ const food = ref<string[]>([]);
 <template>
   <main class="flex flex-col gap-8 p-8">
     <h1 class="text-4xl">Playground Nas UI</h1>
+
+    <NumberFieldRoot :default-value="5" :min="5" :max="10" controls="sides">
+      <NumberFieldDecrement />
+      <NumberFieldInput />
+      <NumberFieldIncrement />
+    </NumberFieldRoot>
+
+    <NumberFieldRoot :default-value="5" :min="5" :max="10" controls="stacked">
+      <NumberFieldInput />
+      <NumberFieldIncrement />
+      <NumberFieldDecrement />
+    </NumberFieldRoot>
 
     <SelectRoot v-model="fruit">
       <SelectTrigger size="md" placeholder="Choose a fruit" />

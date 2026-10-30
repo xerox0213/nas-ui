@@ -1,14 +1,14 @@
-import { inject, type InjectionKey, provide } from "vue";
+import { inject, provide } from "vue";
 
-export const createContext = <T>(name: string, rootComponentName: string) => {
-  const key = Symbol(name) as InjectionKey<T>;
+export const createContext = <Value>(name: string, rootComponentName: string) => {
+  const key = Symbol(name);
 
-  const provideCtx = (value: T) => {
+  const provideCtx = (value: Value) => {
     provide(key, value);
   };
 
-  const injectCtx = () => {
-    const value = inject(key);
+  const injectCtx = <Fallback = undefined>(fallback?: Fallback) => {
+    const value = inject<Value | Fallback | undefined>(key, fallback);
 
     if (value === undefined) {
       throw new Error(
